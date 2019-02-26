@@ -1,9 +1,27 @@
-﻿@model MVCBasicClassExample1.Models.Video
+﻿@model IEnumerable<MVCBasicClassExample1.Models.Video>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Video</title>
 </head>
 <body>
-    @Model.Title;
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Genre</td>
+            </tr>
+        </thead>
+        @foreach (var video in Model)
+        {
+            <tr>
+                <td>@video.Id</td>
+                <td>@video.Title</td>
+                <td>@video.Genre</td>
+            </tr>
+
+        }
+       
+    </table>
 </body>
 </html>

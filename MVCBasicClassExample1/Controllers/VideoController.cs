@@ -11,7 +11,13 @@ namespace MVCBasicClassExample1.Controllers
     {
         public ViewResult index()
         {
-            var model = new Video { Id = 1, Title = "Shrek", Genre = "Animated" };
+            //var model = new Video { Id = 1, Title = "Shrek", Genre = "Animated" };
+            var model = new List<Video>
+            {
+                new Video { Id = 1, Title = "Shrek", Genre = "Animated" },
+                new Video { Id = 2, Title = "Frozen", Genre = "Animated" },
+                new Video { Id = 3, Title = "Up", Genre = "Animated" }
+            };
             return View(model);
         }
         public string BestMovie()
