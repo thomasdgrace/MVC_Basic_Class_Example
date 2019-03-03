@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MVCBasicClassExample1.Models.Video>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Video</title>
@@ -18,10 +19,11 @@
                 <td>@video.Id</td>
                 <td>@video.Title</td>
                 <td>@video.Genre</td>
+                <td><a asp-action="Details" asp-controller="Video" asp-route-id="@video.Id">Details</a></td>
             </tr>
 
         }
-       
+
     </table>
 </body>
 </html>

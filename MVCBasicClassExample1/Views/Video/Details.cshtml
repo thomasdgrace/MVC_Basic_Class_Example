@@ -1,0 +1,22 @@
+﻿@model MVCBasicClassExample1.Models.Video
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Details</title>
+</head>
+<body>
+    <h2>Video Details</h2>
+    <table>
+        <tr>
+            <td>Title:@Model.Title </td>
+        </tr>
+        <tr>
+            <td>Genre: @Model.Genre</td>
+        </tr>
+        <tr>
+            <td>Id: @Model.Id</td>
+        </tr>
+    </table>
+    <a asp-action="Index">Back to List</a>
+</body>
+</html>

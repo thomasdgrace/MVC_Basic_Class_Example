@@ -9,20 +9,23 @@ namespace MVCBasicClassExample1.Controllers
 {
     public class VideoController:Controller
     {
-        public ViewResult index()
+
+        private readonly VideoDbContext _context;
+        public VideoController(VideoDbContext Context)
+        {
+            _context = Context;
+        }
+        public ViewResult Index()
         {
             //var model = new Video { Id = 1, Title = "Shrek", Genre = "Animated" };
-            var model = new List<Video>
-            {
-                new Video { Id = 1, Title = "Shrek", Genre = "Animated" },
-                new Video { Id = 2, Title = "Frozen", Genre = "Animated" },
-                new Video { Id = 3, Title = "Up", Genre = "Animated" }
-            };
+            var model = _context.Videos.ToList();
             return View(model);
         }
-        public string BestMovie()
+
+        public IActionResult Details(int id)
         {
-            return "Green Book";
+            var model = _context.Find<Video>(id);
+            return View(model);
         }
     }
 }
