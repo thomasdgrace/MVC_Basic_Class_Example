@@ -37,15 +37,19 @@ namespace MVCBasicClassExample1.Controllers
         [HttpPost]
         public IActionResult Create(Video model)
         {
-            var video = new Video()
+            if(ModelState.IsValid)
             {
-                Title = model.Title,
-                Genre = model.Genre
-            };
-            _context.Add(video);
-            _context.SaveChanges();
+                var video = new Video()
+                {
+                    Title = model.Title,
+                    Genre = model.Genre
+                };
+                _context.Add(video);
+                _context.SaveChanges();
 
-            return RedirectToAction("Details", new { id = video.Id });
+                return RedirectToAction("Details", new { id = video.Id });
+            }
+            return View(model);
         }
     }
 }
