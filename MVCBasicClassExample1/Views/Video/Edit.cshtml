@@ -1,13 +1,13 @@
 ﻿@using MVCBasicClassExample1.Models;
-@model Video
+@model MVCBasicClassExample1.Models.Video
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <html>
 <head>
     <title>Create</title>
 </head>
 <body>
-    <h2>Create Video</h2>
-    <form asp-action="Create" method="post">
+    <h2>Edit Video @Model.Title</h2>
+    <form asp-action="Edit" method="post">
         <div asp-validation-summary="All"></div>
         <table>
             <tr>
@@ -22,7 +22,7 @@
             </tr>
         </table>
         <br />
-        <input type="submit" value="Create" />
+        <input type="submit" value="Save" />
     </form>
     <a asp-action="Index">Back to List</a>
 </body>

@@ -15,12 +15,14 @@
         </thead>
         @foreach (var video in Model)
         {
-            <tr>
-                <td>@video.Id</td>
-                <td>@video.Title</td>
-                <td>@video.Genre</td>
-                <td><a asp-action="Details" asp-controller="Video" asp-route-id="@video.Id">Details</a></td>
-            </tr>
+        <tr>
+            <td>@video.Id</td>
+            <td>@video.Title</td>
+            <td>@video.Genre</td>
+            <td><a asp-action="Details" asp-controller="Video" asp-route-id="@video.Id">Details</a></td>
+            <td><a asp-action="Edit" asp-controller="Video" asp-route-id="@video.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-controller="Video" asp-route-id="@video.Id">Delete</a></td>
+        </tr>
         }
     </table>
     <br />
